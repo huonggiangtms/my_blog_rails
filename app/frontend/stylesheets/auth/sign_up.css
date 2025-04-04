@@ -1,0 +1,88 @@
+/* Căn giữa và tạo khung cho form */
+.sign-up-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin-top: 10%;
+}
+
+.sign-up-container form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề Sign up */
+.sign-up-header {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Các trường nhập liệu */
+.sign-up-field {
+    margin-bottom: 20px;
+}
+
+.sign-up-field label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.sign-up-field input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.sign-up-field input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Nút đăng ký */
+.sign-up-actions {
+    text-align: center;
+}
+
+.sign-up-actions input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sign-up-actions input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.sign-up-container .devise-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.sign-up-container .devise-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sign-up-container .devise-links a:hover {
+    text-decoration: underline;
+}

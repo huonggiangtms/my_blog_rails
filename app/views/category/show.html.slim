@@ -1,0 +1,12 @@
+h1 Category Details
+
+p
+  strong Name:
+  = @category.name
+
+p
+  strong Description:
+  = @category.description
+
+= link_to 'Edit', edit_category_path(@category), class: 'btn btn-primary'
+= link_to 'Back', category_index_path, class: 'btn btn-secondary'
