@@ -1,24 +1,27 @@
-h1 Post Details
-
-table
-  thead
-    tr
-      th Title
-      th Content
-      th Created At
-      th Actions
-  tbody
-    - @posts.each do |post|
+- if alert
+  .alert.alert-danger
+    p{style="font-size: 18px; color: red; padding: 10px; text-align: end"}
+      = alert
+h1.posts-title Post Details
+.table-container
+  table.posts-table
+    thead
       tr
-        td = post.title
-        td = post.content
-        td = post.created_at.strftime("%B %d, %Y ")
-        td
-          = link_to 'Show', post_path(post)
-          = link_to 'Edit', edit_post_path(post)
-          = button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }
+        th Title
+        th Content
+        th Created At
+        th Actions
+    tbody
+      - @posts.each do |post|
+        tr
+          td = post.title
+          td = truncate(post.content, length: 50)
+          td = post.created_at.strftime("%B %d, %Y")
+          td.actions
+            = link_to 'Show', post_path(post), class: 'btn-show'
+            - if post.user == current_user
+              = link_to 'Edit', edit_post_path(post), class: 'btn-edit'
+              = button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-delete'
 
-  tfoot
-    tr
-      td colspan="4"
-        = button_to 'New Post', new_post_path, method: :get
+.new-post-btn
+  = button_to 'New Post', new_post_path, method: :get, class: 'btn-new'

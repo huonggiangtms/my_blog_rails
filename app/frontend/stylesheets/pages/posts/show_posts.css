@@ -1,0 +1,81 @@
+/* Wrapper with border and padding */
+.posts-show-wrapper {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    /* Thêm khoảng cách trên và dưới */
+    padding: 20px;
+    /* Giữ padding bên trong */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Title Styling */
+.posts-show-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    /* Căn trái tiêu đề */
+    margin-bottom: 15px;
+    /* Khoảng cách dưới tiêu đề */
+}
+
+/* Post Content Styling */
+.posts-show-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
+    /* Căn trái nội dung bài viết */
+    padding: 0;
+    /* Không có padding */
+    background: none;
+    /* Không có background */
+}
+
+/* Created At Styling */
+.posts-show-created-at {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left;
+    /* Căn trái ngày tạo */
+}
+
+/* Actions Buttons Styling */
+.posts-show-actions {
+    text-align: center;
+}
+
+.posts-show-actions .btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.875rem;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.posts-show-actions .btn-edit {
+    background-color: #20c997;
+    color: white;
+    border: none;
+}
+
+.posts-show-actions .btn-edit:hover {
+    background-color: #27a17c;
+}
+
+.posts-show-actions .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.posts-show-actions .btn-secondary:hover {
+    background-color: #5a6268;
+}

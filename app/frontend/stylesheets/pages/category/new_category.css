@@ -1,0 +1,93 @@
+/* Tổng thể form */
+.category-new-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề */
+.category-new-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Trường nhập */
+.category-new-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.category-new-field label {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.category-new-field input,
+.category-new-field textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Error messages */
+.category-new-error-messages {
+    background-color: #ffe5e5;
+    border: 1px solid #ffaaaa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.category-new-error-messages h2 {
+    color: #cc0000;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Nút: nằm ngang, canh phải */
+.category-new-action {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    text-decoration: none;
+}
+
+/* Nút chung */
+.category-new-form .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Nút submit */
+.category-new-form .btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.category-new-form .btn-success:hover {
+    background-color: #218838;
+}
+
+/* Nút back */
+.category-new-back {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+}
+
+.category-new-back:hover {
+    background-color: #5a6268;
+}

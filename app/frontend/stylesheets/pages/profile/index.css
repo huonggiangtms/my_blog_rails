@@ -1,0 +1,50 @@
+/* Styling for Profile Page */
+.profile-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Profile Box Styling */
+.profile-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.profile-info {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.profile-info strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-box p {
+    margin-bottom: 15px;
+}
+
+/* Optional: Add a hover effect for profile box */
+.profile-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add background color to the profile box */
+.profile-box {
+    background-color: #ffffff;
+}
+
+.profile-info {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}

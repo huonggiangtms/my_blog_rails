@@ -1,0 +1,88 @@
+.posts-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.posts-table {
+    margin: 0 auto;
+    width: 70%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.posts-table th,
+.posts-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.posts-table thead {
+    background-color: #f5f5f5;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-show {
+    background-color: #0ea5e9;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background-color: #20c997;
+    text-decoration: none;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+.btn-delete {
+    background-color: #f50e0e;
+    text-decoration: none;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 0px;
+    font-size:16px;
+}
+
+.btn-show:hover {
+    background-color: #0d98ba;
+}
+
+.btn-edit:hover {
+    background-color: #1fa67a;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+.btn-new {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #22c55e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 0px;
+    margin-left: 15%;
+    font-size: 18px;
+}
+
+.btn-new:hover {
+    background-color: #1d9e48;
+}

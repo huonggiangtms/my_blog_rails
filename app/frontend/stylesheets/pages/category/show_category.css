@@ -1,0 +1,67 @@
+.show-category-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Box chứa nội dung */
+.category-box {
+    width: 30%;
+    /* Chiều rộng của box */
+    max-width: 600px;
+    /* Đảm bảo box không quá rộng */
+    margin: 0 auto;
+    /* Căn giữa box */
+    padding: 20px;
+    /* Khoảng cách trong box */
+    background-color: #f8f9fa;
+    /* Màu nền nhẹ nhàng */
+    border-radius: 8px;
+    /* Bo góc cho box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng nhẹ cho box */
+}
+
+.category-box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.category-box strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.show-actions {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.show-actions .btn {
+    margin-right: 10px;
+}
+
+.btn.btn-primary {
+    background-color: #20c997;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: #1db185;
+}
+
+.btn.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn.btn-secondary:hover {
+    background-color: #5a6268;
+}
