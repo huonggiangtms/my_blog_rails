@@ -1,0 +1,19 @@
+h1.text-3xl.font-bold.text-center.mb-6 User Details
+
+.div.max-w-xl.mx-auto.bg-white.p-6.rounded-lg.shadow-md.space-y-4
+  .text-lg
+    strong.text-gray-700 Email:
+    span.ml-2.text-gray-900 = @user.email
+
+  .text-lg
+    strong.text-gray-700 Roles:
+    span.ml-2.text-gray-900 = @user.roles.pluck(:name).join(', ')
+
+  .flex.justify-end.space-x-4.pt-4
+    = link_to edit_admin_user_path(@user), class: 'inline-flex items-center gap-2 text-yellow-600 hover:text-yellow-700 font-medium transition' do
+      i.fas.fa-pen
+      | Edit
+
+    = link_to admin_users_path, class: 'inline-flex items-center gap-2 text-gray-600 hover:text-gray-800 font-medium transition' do
+      i.fas.fa-arrow-left
+      | Back

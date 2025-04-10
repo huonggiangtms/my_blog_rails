@@ -1,0 +1,17 @@
+h1 = "Xin chào #{@user.email}"
+p
+  | Bài viết "
+  strong = @post.title
+  | " của bạn đã bị báo cáo vi phạm.
+p
+  | Vui lòng xem lại nội dung bài viết của bạn và đảm bảo tuân thủ các quy định của chúng tôi.
+p
+  | Bạn có thể xem lại bài viết tại: 
+  a href="#{post_url(@post)}" Xem bài viết
+p
+  | Nếu bạn cho rằng đây là một báo cáo không chính xác, vui lòng liên hệ với quản trị viên.
+p
+  | Trân trọng,
+  br
+  | Đội ngũ quản trị
+    

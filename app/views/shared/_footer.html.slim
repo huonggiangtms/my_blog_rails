@@ -1,0 +1,17 @@
+footer.footer.bg-gray-900.text-white.py-8.mt-10
+  .footer-container.container.mx-auto.px-4.grid.grid-cols-1.md:grid-cols-3.gap-8
+    .footer-left
+      h2.logo.text-2xl.font-bold.mb-2 Blog App
+      p.text-sm This is a blog app
+
+    .footer-center
+      ul.footer-links.space-y-2
+        li
+          = link_to 'Trang chủ', '/', class: 'hover:text-blue-400 transition'
+        li
+          = link_to 'Giới thiệu', '/about', class: 'hover:text-blue-400 transition'
+        li
+          = link_to 'Liên hệ', '/contact', class: 'hover:text-blue-400 transition'
+
+    .footer-right.text-sm.md:text-right
+      p &copy; 2025 Blog App. All rights reserved.

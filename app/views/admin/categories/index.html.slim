@@ -1,0 +1,32 @@
+.div.flex.justify-between.items-center.mb-6
+  h1.text-2xl.font-bold.text-center.flex-1 Admin - Categories
+
+  = link_to new_admin_category_path,
+    class: 'inline-flex items-center px-3 py-1.5 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition space-x-2 ml-auto' do
+    i class="fa-solid fa-plus"
+    span New category
+
+div.container.mx-auto.px-4
+  div.overflow-x-auto
+    table.w-full.text-left.text-sm.bg-white.shadow-md.rounded-lg
+      thead.bg-gray-100
+        tr
+          th.px-4.py-2 Name
+          th.px-4.py-2 Description
+          th.px-4.py-2 Created At
+          th.px-4.py-2 Actions
+      tbody
+        - @categories.each do |category|
+          tr.border-b
+            td.px-4.py-3.font-medium.text-gray-800 = category.name
+            td.px-4.py-3 = category.description
+            td.px-4.py-3 = l(category.created_at, format: :short)
+            td.px-4.py-3.flex.items-center.space-x-3
+              = link_to admin_category_path(category), class: 'text-blue-500 hover:scale-110 transition' do
+                i class="fa-solid fa-eye text-base" title="Show"
+              = link_to edit_admin_category_path(category), class: 'text-green-500 hover:scale-110 transition' do
+                i class="fa-solid fa-pen text-base" title="Edit"
+              = button_to admin_category_path(category), method: :delete,
+                  data: { turbo_confirm: 'Are you sure?' },
+                  form_class: "inline-block", class: 'text-red-500 hover:scale-110 transition' do
+                i class="fa-regular fa-trash-can text-base" title="Delete"

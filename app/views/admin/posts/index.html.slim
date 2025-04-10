@@ -1,0 +1,55 @@
+- if alert 
+  .bg-red-100.border.border-red-400.text-red-700.px-4.py-3.rounded.relative.mb-6.text-right
+    p.text-sm.font-medium = alert 
+- if notice
+  .bg-red-100.border.border-red-400.text-red-700.px-4.py-3.rounded.relative.mb-6.text-right
+    p.text-sm.font-medium = notice
+/ H1 căn giữa, in đậm
+h1.text-3xl.font-bold.text-center.mb-6 Admin - Posts
+
+/ Wrapper có padding để cách xa sidebar
+div.container.mx-auto.px-8
+  div.overflow-x-auto
+    table.w-full.text-left.text-sm.bg-white.shadow-md.rounded-lg
+      thead.bg-gray-100
+        tr
+          th.px-6.py-3 Title
+          th.px-6.py-3 Content
+          th.px-6.py-3 Author
+          th.px-6.py-3 Category
+          th.px-6.py-3 Created At
+          th.px-6.py-3 Actions
+      tbody
+        - @posts.each do |post|
+          tr.border-b
+            td.px-6.py-4.font-medium.text-gray-800 = post.title.truncate(30, separator: ' ')
+            td.px-6.py-4.font-medium.text-gray-800 = post.content.truncate(100, separator: ' ')
+            td.px-6.py-4 = post.user.email
+            td.px-6.py-4 = post.category.name
+            td.px-6.py-4 = l(post.created_at, format: :short)
+            td.px-6.py-4.flex.items-center.space-x-4
+              / Show
+              = link_to admin_post_path(post), class: 'text-blue-500 hover:scale-110 transition' do
+                i class="fa-solid fa-eye text-lg" title="Show"
+
+              / Edit
+              = link_to edit_admin_post_path(post), class: 'text-green-500 hover:scale-110 transition' do
+                i class="fa-solid fa-pen text-lg" title="Edit"
+
+              / Delete
+              = button_to admin_post_path(post), method: :delete,
+                  data: { turbo_confirm: 'Are you sure?' },
+                  form_class: "inline-block", class: 'text-red-500 hover:scale-110 transition' do
+                i class="fa-regular fa-trash-can text-lg" title="Delete"
+
+              / Report (Tạm thời bỏ qua phần này)
+              = button_to report_admin_post_path(post), method: :post, class: 'text-yellow-500 hover:scale-110 transition inline-flex items-center', data: { turbo_confirm: 'Are you sure you want to report this post?' } do
+                i class="fa-solid fa-flag text-lg" title="Report"
+              / = link_to "#", class: 'text-yellow-500 hover:scale-110 transition' do
+              /   i class="fa-solid fa-flag text-lg" title="Report"
+
+  / Nút tạo bài viết mới
+  = link_to new_admin_post_path,
+    class: 'inline-flex items-center mt-6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition space-x-2' do
+    i class="fa-solid fa-plus"
+    span New Post

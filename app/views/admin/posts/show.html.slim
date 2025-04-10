@@ -1,0 +1,27 @@
+/ H1 căn giữa, in đậm
+h1.text-3xl.font-bold.text-center.mb-6 Post Details
+
+div.bg-white.p-6.shadow-md.rounded-lg
+  h2.text-xl.font-semibold.mb-4 = @post.title
+
+  div.mb-4
+    strong Category:
+    = @post.category.name
+
+  div.mb-4
+    strong Author:
+    = @post.user.email
+
+  div.mb-4
+    strong Created At:
+    = l(@post.created_at, format: :long)
+
+  div.mb-4
+    strong Content:
+    p = @post.content
+
+  / Actions
+  div.flex.justify-between.mt-6
+    = link_to admin_posts_path, class: 'text-gray-500 hover:underline' do
+      i class="fa-solid fa-arrow-left mr-2" 
+      span Back to Posts

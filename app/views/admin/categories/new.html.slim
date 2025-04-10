@@ -1,0 +1,22 @@
+h1.category-new-title.text-3xl.font-bold.text-center.mb-6 New Category
+
+= form_with model: @category, url: admin_categories_path, method: :post, local: true, html: { class: 'category-new-form max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg' } do |form|
+  - if @category.errors.any?
+    .category-new-error-messages.bg-red-100.border-l-4.border-red-500.text-red-700.px-4.py-2.rounded-md
+      h2 = pluralize(@category.errors.count, "error") + " prohibited this category from being saved"
+      ul
+        - @category.errors.full_messages.each do |message|
+          li = message
+
+  .category-new-field.mb-4
+    = form.label :name, class: 'block text-sm font-semibold text-gray-700'
+    = form.text_field :name, class: 'mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none'
+
+  .category-new-field.mb-4
+    = form.label :description, class: 'block text-sm font-semibold text-gray-700'
+    = form.text_area :description, class: 'mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none', rows: 4
+
+  .category-new-action.mt-6.flex.justify-between
+    = form.submit 'Create Category', class: 'px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition'
+    = link_to admin_categories_path, class: 'px-6 py-3 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition flex items-center' do
+      i.fa.fa-arrow-left.mr-2

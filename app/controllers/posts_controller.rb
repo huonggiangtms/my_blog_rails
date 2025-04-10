@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user, only: [:edit, :update, :destroy]  # Kiểm tra quyền sở hữu bài viết
+  before_action :authorize_user, only: [:edit, :update, :destroy]  
 
   def index
     @posts = Post.all
@@ -11,8 +12,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)  # Gán user_id từ current_user
-
+    # @post = current_user.posts.build(post_params)  # Gán user_id từ current_user
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
     else
@@ -21,11 +23,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    # Bài viết sẽ được hiển thị cho tất cả người dùng
   end
 
   def edit
-    # Phương thức này sẽ chỉ được thực hiện nếu người dùng là chủ sở hữu của bài viết
   end
 
   def update

@@ -1,0 +1,18 @@
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/bundle/vendor/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/admin/.rvm/rubies/ruby-3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/bundle/vendor/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250406-84252-upfets sitelibdir\=./.gem.20250406-84252-upfets clean
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/bundle/vendor/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250406-84252-upfets sitelibdir\=./.gem.20250406-84252-upfets
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/bundle/vendor/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250406-84252-upfets sitelibdir\=./.gem.20250406-84252-upfets install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20250406-84252-upfets/skiptrace/internal
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/bundle/vendor/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250406-84252-upfets sitelibdir\=./.gem.20250406-84252-upfets clean

@@ -9,21 +9,36 @@ html
 
     = yield :head 
 
-    / link rel="manifest" href="/manifest.json"
     link rel="icon" href="/icon.png" type="image/png"
     link rel="icon" href="/icon.svg" type="image/svg+xml"
     link rel="apple-touch-icon" href="/icon.png"
+
+    / Tailwind + Font Awesome
+    script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+
+    / Vite
     = vite_client_tag 
     = vite_javascript_tag 'application' 
     = vite_stylesheet_tag 'application', data: { "turbo-track": "reload" }
-  - if controller_name != 'registrations' && controller_name != 'sessions'
-    header
-      = render 'shared/header'
-  body
-    = yield 
-  - if controller_name != 'registrations' && controller_name != 'sessions'
-      header
-        = render 'shared/footer'
 
-style 
-  | body {  font-family: 'Roboto', sans-serif; margin: 0; padding: 0;}
+  - is_auth_page = controller_name == 'registrations' || controller_name == 'sessions'
+  - is_admin_area = controller_path.starts_with?('admin/') && user_signed_in? && current_user.has_role?(:admin)
+
+  body class="min-h-screen flex flex-col"
+    - if is_admin_area
+      = render 'admin/shared/admin_sidebar'
+
+      main.flex-1.ml-64.px-6.py-8.bg-gray-50
+        = yield
+
+    - else
+      - unless is_auth_page
+        header
+          = render 'shared/header'
+
+      main.flex-1
+        = yield
+
+      - unless is_auth_page
+        = render 'shared/footer'

@@ -1,27 +1,34 @@
+/ Alert nếu có
 - if alert
-  .alert.alert-danger
-    p{style="font-size: 18px; color: red; padding: 10px; text-align: end"}
-      = alert
-h1.posts-title Post Details
-.table-container
-  table.posts-table
-    thead
-      tr
-        th Title
-        th Content
-        th Created At
-        th Actions
-    tbody
-      - @posts.each do |post|
-        tr
-          td = post.title
-          td = truncate(post.content, length: 50)
-          td = post.created_at.strftime("%B %d, %Y")
-          td.actions
-            = link_to 'Show', post_path(post), class: 'btn-show'
-            - if post.user == current_user
-              = link_to 'Edit', edit_post_path(post), class: 'btn-edit'
-              = button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-delete'
+  .bg-red-100.border.border-red-400.text-red-700.px-4.py-3.rounded.relative.mb-6.text-right
+    p.text-sm.font-medium = alert
 
-.new-post-btn
-  = button_to 'New Post', new_post_path, method: :get, class: 'btn-new'
+div.px-4.pt-6
+
+  / Header line với title ở giữa và nút bên phải
+  div.grid.grid-cols-3.items-center.mb-6
+    div 
+    h1.text-3xl.font-bold.text-center.text-gray-800 Post Details
+    div.flex.justify-end
+      = link_to new_post_path, class: "inline-flex items-center px-4 py-2 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition shadow" do
+        i class="fas fa-plus mr-2"
+        span New Post
+
+  / Danh sách bài viết dạng card
+  div.grid.grid-cols-1.sm:grid-cols-2.lg:grid-cols-3.gap-6
+    - @posts.each do |post|
+      .bg-white.shadow-md.rounded-lg.p-6.flex.flex-col.justify-between
+        h2.text-xl.font-bold.text-gray-800.mb-2 = post.title
+        p.text-gray-600.mb-4 = truncate(post.content, length: 80)
+        p.text-sm.text-gray-400.mb-4 = post.created_at.strftime("%B %d, %Y")
+
+        .flex.items-center.space-x-4.mt-auto
+          = link_to post_path(post), class: "text-blue-600 hover:text-blue-800 transition" do
+            i class="fas fa-eye"
+          - if post.user == current_user
+            = link_to edit_post_path(post), class: "text-yellow-500 hover:text-yellow-600 transition" do
+              i class="fas fa-pen"
+            = button_to post_path(post), method: :delete,
+                data: { turbo_confirm: "Are you sure?" },
+                class: "text-red-600 hover:text-red-800 transition", form_class: "inline-block" do
+              i class="fas fa-trash"

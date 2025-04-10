@@ -1,6 +1,15 @@
-h1.profile-title Profile
+h1.text-3xl.font-bold.text-center.mb-8 Profile
 
-.div.profile-box
-  p.profile-info
-    strong Email: 
-    = @user.email
+.div.relative.max-w-xl.mx-auto.bg-white.p-8.rounded-lg.shadow-md
+
+  / ICON UPDATE (góc phải trên)
+  = link_to edit_user_registration_path,
+      class: 'absolute top-4 right-4 text-blue-500 hover:text-blue-700 transition',
+      title: "Update Info" do
+    i.fas.fa-user-pen.text-xl
+
+  / Nội dung profile
+  .mb-6
+    p.text-lg
+      strong.text-gray-700 Email:
+      span.text-gray-900.ml-2 = current_user.email

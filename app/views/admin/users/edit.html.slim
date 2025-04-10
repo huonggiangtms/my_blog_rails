@@ -1,0 +1,21 @@
+h1.text-3xl.font-bold.text-center.mb-8 Edit User Roles
+
+= form_with model: [:admin, @user], local: true do |f|
+  .max-w-2xl.mx-auto.bg-white.p-6.rounded-lg.shadow-md.space-y-6
+
+    p.text-lg.text-gray-700
+      strong Email:
+      span.ml-2.font-semibold.text-gray-900 = @user.email
+
+    .mt-4
+      strong.text-gray-700 Roles:
+      .mt-2.space-y-2
+        - Role.all.each do |role|
+          label.flex.items-center.space-x-3
+            = check_box_tag "user[role_ids][]", role.id, @user.has_role?(role.name), id: "role_#{role.id}", class: 'form-checkbox h-4 w-4 text-blue-600'
+            span.text-gray-800 = role.name.humanize
+
+    .flex.justify-end.space-x-4.pt-4
+      = f.submit 'Update', class: 'bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition'
+      = link_to admin_users_path, class: 'text-gray-600 hover:text-gray-800 flex items-center space-x-1 transition' do
+        i.fas.fa-arrow-left
