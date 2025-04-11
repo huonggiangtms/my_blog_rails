@@ -1,14 +1,15 @@
 doctype html
 html
   head
-    title = content_for(:title) || "" 
+    title = content_for(:title) || ""
     meta name="viewport" content="width=device-width,initial-scale=1"
     meta name="apple-mobile-web-app-capable" content="yes"
-    = csrf_meta_tags 
-    = csp_meta_tag 
+    = csrf_meta_tags
+    = csp_meta_tag
 
-    = yield :head 
+    = yield :head
 
+    / Favicon
     link rel="icon" href="/icon.png" type="image/png"
     link rel="icon" href="/icon.svg" type="image/svg+xml"
     link rel="apple-touch-icon" href="/icon.png"
@@ -18,8 +19,8 @@ html
     link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
     / Vite
-    = vite_client_tag 
-    = vite_javascript_tag 'application' 
+    = vite_client_tag
+    = vite_javascript_tag 'application'
     = vite_stylesheet_tag 'application', data: { "turbo-track": "reload" }
 
   - is_auth_page = controller_name == 'registrations' || controller_name == 'sessions'
@@ -31,7 +32,6 @@ html
 
       main.flex-1.ml-64.px-6.py-8.bg-gray-50
         = yield
-
     - else
       - unless is_auth_page
         header
@@ -42,3 +42,10 @@ html
 
       - unless is_auth_page
         = render 'shared/footer'
+
+    / Flash toast
+    .flash-container.fixed.top-4.right-4.z-50.space-y-2
+      - flash.each do |type, message|
+        - bg_class = { notice: "bg-green-500", alert: "bg-red-500" }[type.to_sym] || "bg-blue-500"
+        .toast.px-4.py-2.rounded-lg.shadow.text-white.font-medium.transition-all.duration-300.animate-fade-in-out class=bg_class data-controller="flash"
+          = message

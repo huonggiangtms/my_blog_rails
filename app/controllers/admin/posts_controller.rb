@@ -51,7 +51,7 @@ def report
   
   Rails.logger.info "Reporting post #{post.id} by user #{user.id} (#{user.email})"
   
-  UserMailer.report_violation_email(user, post).deliver_later
+  UserMailer.report_violation_email(user, post).deliver_now
   
   Rails.logger.info "====== EMAIL SENT DIRECTLY ======"
   

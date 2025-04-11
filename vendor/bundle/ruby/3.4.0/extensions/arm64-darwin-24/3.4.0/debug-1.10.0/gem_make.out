@@ -1,0 +1,19 @@
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+/Users/admin/.rvm/rubies/ruby-3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-i8ld2i sitelibdir\=./.gem.20250410-69058-i8ld2i clean
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-i8ld2i sitelibdir\=./.gem.20250410-69058-i8ld2i
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-i8ld2i sitelibdir\=./.gem.20250410-69058-i8ld2i install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 debug.bundle ./.gem.20250410-69058-i8ld2i/debug
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-i8ld2i sitelibdir\=./.gem.20250410-69058-i8ld2i clean

@@ -30,22 +30,25 @@ div.grid.grid-cols-1.lg:grid-cols-3.gap-8.px-6.pt-8
         | 11111 lượt thích
       div.flex.items-center.text-blue-600
         i.fas.fa-comment.mr-2
-        | 3 bình luận
+        = pluralize(@post.comments.count, 'bình luận', 'bình luận')
 
     / Ô nhập bình luận
     div.bg-gray-50.p-4.rounded-lg.shadow-inner.mb-4
       h3.text-lg.font-semibold.text-gray-800.mb-2 Thêm bình luận
-      form action="#" method="post"
-        textarea.w-full.border.border-gray-300.rounded.p-2.mb-2 rows="3" placeholder="Nhập bình luận của bạn..."
-        button.bg-blue-500.text-white.px-4.py-2.rounded.hover:bg-blue-600.transition Gửi bình luận
-
+      
+      = form_with(model: [@post, Comment.new], local: false, class: "flex items-center gap-2") do |f|
+        = f.text_area :content, rows: 1, placeholder: "Nhập bình luận...", class: "flex-1 border border-gray-300 rounded px-3 py-2 resize-none focus:outline-none focus:ring focus:border-blue-500"
+        
+        button type="submit" class="text-blue-600 hover:text-blue-800"
+          i.fas.fa-paper-plane.text-xl
     / Danh sách bình luận
     div.bg-gray-50.p-4.rounded-lg.shadow-inner
       h3.text-lg.font-semibold.text-gray-800.mb-2 Bình luận gần đây
-      - 3.times do |i|
+
+      - @post.comments.order(created_at: :desc).each do |comment|
         div.bg-white.p-3.mb-2.rounded.shadow-sm
-          p.text-sm.text-gray-700.font-semibold Hương Giang
-          p.text-sm.text-gray-600.mt-1 Đây là bình luận của Hương Giang kkkk.
+          p.text-sm.text-gray-700.font-semibold = comment.user.email
+          p.text-sm.text-gray-600.mt-1 = comment.content
 
   /  Gợi ý bài viết khác
   div

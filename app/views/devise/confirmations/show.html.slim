@@ -1,0 +1,9 @@
+.section.flex.items-center.justify-center.min-h-screen.bg-gray-50
+  .bg-white.p-8.rounded-2xl.shadow-lg.max-w-md.w-full.text-center
+    .text-green-500.text-6xl.mb-4
+      i.fas.fa-check-circle
+
+    h2.text-2xl.font-bold.text-green-600.mb-2 Tài khoản đã được xác nhận!
+    p.text-gray-600.mb-6 Bạn đã xác nhận email thành công. Bây giờ bạn có thể đăng nhập.
+
+    = link_to 'Đăng nhập', new_user_session_path, class: 'inline-block bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition'

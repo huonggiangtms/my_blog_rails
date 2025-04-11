@@ -10,7 +10,7 @@ class ReportViolationJob < ApplicationJob
   def perform(user, post) 
     Rails.logger.info "Sending violation email to #{user.email}"
 
-    UserMailer.report_violation_email(user, post).deliver_later
+    UserMailer.report_violation_email(user, post).deliver_now
   end
 
   private

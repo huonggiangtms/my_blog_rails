@@ -1,0 +1,18 @@
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.6/ext/stringio
+/Users/admin/.rvm/rubies/ruby-3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-zfoxcj sitelibdir\=./.gem.20250410-69058-zfoxcj clean
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-zfoxcj sitelibdir\=./.gem.20250410-69058-zfoxcj
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-zfoxcj sitelibdir\=./.gem.20250410-69058-zfoxcj install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 stringio.bundle ./.gem.20250410-69058-zfoxcj
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.6/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-zfoxcj sitelibdir\=./.gem.20250410-69058-zfoxcj clean

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root to: 'home#index'
     resources :posts do
       member do
-        post 'report' 
+      post 'report' 
       end
     end
     resources :categories
@@ -12,9 +12,13 @@ Rails.application.routes.draw do
   end
 
   #user
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
   root "home#index"
-  resources :posts
+  resources :posts do
+  resources :comments, only: [:create]
+  end
   resources :profile , only: [:index]
   resources :about , only: [:index]
 

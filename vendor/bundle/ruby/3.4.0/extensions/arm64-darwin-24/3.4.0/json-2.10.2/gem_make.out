@@ -1,0 +1,24 @@
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/json-2.10.2/ext/json/ext/parser
+/Users/admin/.rvm/rubies/ruby-3.4.2/bin/ruby extconf.rb
+checking for rb_enc_interned_str() in ruby.h... yes
+checking for rb_hash_new_capa() in ruby.h... yes
+checking for rb_hash_bulk_insert() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... yes
+checking for strnlen() in string.h... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/json-2.10.2/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-lg0i2r sitelibdir\=./.gem.20250410-69058-lg0i2r clean
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/json-2.10.2/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-lg0i2r sitelibdir\=./.gem.20250410-69058-lg0i2r
+compiling parser.c
+linking shared-object json/ext/parser.bundle
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/json-2.10.2/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-lg0i2r sitelibdir\=./.gem.20250410-69058-lg0i2r install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 parser.bundle ./.gem.20250410-69058-lg0i2r/json/ext
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/json-2.10.2/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-lg0i2r sitelibdir\=./.gem.20250410-69058-lg0i2r clean

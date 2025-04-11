@@ -1,7 +1,5 @@
-/ H1 căn giữa, in đậm
 h1.text-3xl.font-bold.text-center.mb-6 Edit Post
 
-/ Wrapper cho form
 = form_with model: @post, url: admin_post_path(@post), method: :put, local: true, html: { class: 'max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg' } do |form|
   - if @post.errors.any?
     .bg-red-100.border-l-4.border-red-500.text-red-700.px-4.py-2.rounded-md
@@ -10,22 +8,21 @@ h1.text-3xl.font-bold.text-center.mb-6 Edit Post
         - @post.errors.full_messages.each do |message|
           li = message
 
-  / Trường Title
+  / Title
   .mb-4
     = form.label :title, class: 'block text-sm font-semibold text-gray-700'
     = form.text_field :title, class: 'mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none'
 
-  / Trường Content
+  / Content
   .mb-4
     = form.label :content, class: 'block text-sm font-semibold text-gray-700'
     = form.text_area :content, class: 'mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none', rows: 6
 
-  / Trường Category
+  / Category
   .mb-4
     = form.label :category_id, class: 'block text-sm font-semibold text-gray-700'
     = form.collection_select :category_id, Category.all, :id, :name, prompt: 'Select Category', class: 'mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none'
 
-  / Submit và nút quay lại
   .mt-6.flex.justify-between
     = form.submit 'Update Post', class: 'px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition'
     

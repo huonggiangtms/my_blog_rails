@@ -1,0 +1,24 @@
+.section.max-w-md.mx-auto.mt-20.p-8.bg-white.rounded-2xl.shadow-xl
+  h2.text-2xl.font-bold.text-center.text-gray-800.mb-6 Gửi lại email xác nhận
+
+  = form_with(model: resource, url: user_confirmation_path, local: true) do |f|
+    = render "devise/shared/error_messages", resource: resource
+
+    .mb-4
+      = f.label :email, class: 'block text-sm text-gray-700 font-medium mb-1'
+      = f.email_field :email,
+          autofocus: true,
+          autocomplete: "email",
+          value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+          class: 'w-full rounded-md border border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2 text-sm'
+
+    = f.submit "Gửi lại email xác nhận",
+        class: 'mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200 text-sm'
+
+  .mt-6.text-center
+    = link_to "Chưa nhận được email xác nhận?",
+        new_user_confirmation_path,
+        class: "text-sm text-blue-600 hover:underline"
+
+  .mt-4
+    = render "devise/shared/links"

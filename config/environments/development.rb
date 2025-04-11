@@ -1,7 +1,6 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-
   config.active_job.queue_adapter = :sidekiq
 
   config.enable_reloading = true
@@ -50,16 +49,17 @@ Rails.application.configure do
 
 
   #mail
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
     user_name:            'heoneh123@gmail.com', 
-    password:             'zyam qtqo llzs vbwu', 
+    password:             'bkfg wgpz hydu xpho', 
     authentication:       'plain',
     enable_starttls_auto: true
   }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 

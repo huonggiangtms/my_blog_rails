@@ -1,0 +1,18 @@
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+/Users/admin/.rvm/rubies/ruby-3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-jjzy90 sitelibdir\=./.gem.20250410-69058-jjzy90 clean
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-jjzy90 sitelibdir\=./.gem.20250410-69058-jjzy90
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-jjzy90 sitelibdir\=./.gem.20250410-69058-jjzy90 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20250410-69058-jjzy90
+
+current directory: /Users/admin/Documents/Ruby on Rails/my_blog/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250410-69058-jjzy90 sitelibdir\=./.gem.20250410-69058-jjzy90 clean
