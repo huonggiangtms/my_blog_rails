@@ -1,15 +1,13 @@
 div.px-4.pt-6
 
-  / Header line với title ở giữa và nút bên phải
   div.grid.grid-cols-3.items-center.mb-6
     div 
-    h1.text-3xl.font-bold.text-center.text-gray-800 Post Details
+    h1.text-3xl.font-bold.text-center.text-gray-800 List Post
     div.flex.justify-end
       = link_to new_post_path, class: "inline-flex items-center px-4 py-2 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition shadow" do
         i class="fas fa-plus mr-2"
         span New Post
 
-  / Danh sách bài viết dạng card
   div.grid.grid-cols-1.sm:grid-cols-2.lg:grid-cols-3.gap-6
     - @posts.each do |post|
       .bg-white.shadow-md.rounded-lg.p-6.flex.flex-col.justify-between

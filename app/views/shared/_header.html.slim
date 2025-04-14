@@ -1,27 +1,23 @@
 header.header-container.bg-gray-800.text-white
   nav.navigation.container.mx-auto.px-6.py-3.flex.items-center.justify-between
 
-    / LEFT: Logo
+
     div.text-xl.font-semibold
       = link_to 'MyBlog', '/', class: 'hover:text-blue-400 transition'
 
-    / CENTER: Navigation links
     ul.flex.items-center.gap-x-10
       li = link_to 'Home', '/', class: 'hover:text-blue-400 transition'
       li = link_to 'About', '/about', class: 'hover:text-blue-400 transition'
       li = link_to 'Posts', '/posts', class: 'hover:text-blue-400 transition'
 
-    / RIGHT: User Menu or Auth Links
     - if user_signed_in?
       .relative.group
         button.flex.items-center.gap-3.text-sm.font-medium.focus:outline-none
-          / Avatar with first letter of email
           .w-8.h-8.flex.items-center.justify-center.rounded-full.bg-blue-500.text-white.uppercase.font-bold
             = current_user.email.first
 
           i.fas.fa-chevron-down.text-xs
 
-        / Dropdown Menu
         ul.absolute.right-0.mt-2.w-44.bg-white.text-gray-800.rounded-md.shadow-lg.opacity-0.group-hover:opacity-100.transition-all.z-50
           li
             = link_to '/profile', class: 'block px-4 py-2 hover:bg-gray-100' do
